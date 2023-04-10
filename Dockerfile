@@ -11,9 +11,4 @@ RUN apk update && \
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod ugo+rx /entrypoint.sh
 
-# Files
-RUN mkdir /etc/tor
-RUN mkdir /var/lib/tor
-COPY torrc.default /etc/tor/torrc
-
 ENTRYPOINT [ "/entrypoint.sh" ]
