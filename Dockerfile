@@ -7,3 +7,5 @@ RUN apk update && \
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod ugo+rx /entrypoint.sh
+
+ENTRYPOINT [ "/entrypoint.sh" ]
