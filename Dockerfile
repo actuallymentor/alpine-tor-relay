@@ -1,9 +1,10 @@
 FROM alpine:latest
 
 ARG TOR_VERSION
+ARG DEBIAN_FRONTEND="noninteractive"
 
 RUN apk update && \
-    apk add --no-cache tor=="$TOR_VERSION"
+    apk add --no-cache bash tzdata tor=="$TOR_VERSION"
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod ugo+rx /entrypoint.sh
